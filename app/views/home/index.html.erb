@@ -1,0 +1,98 @@
+<html>
+<head>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+<%= javascript_include_tag('route.js') %>
+<%= stylesheet_link_tag 'application' if params[:action] == 'application' %>
+<%= include_gon %>
+</head>
+<body ng-app="app" ng-controller="controller" data-ng-init="getDataFromRCXApp()">
+
+
+<!--
+<% for shop in @shop-%>
+Shopify_Domain : <%=shop.shopify_domain%> &nbsp; - Shopify_Token :<%=shop.shopify_token%> -  Created_at : <%=shop.created_at%>  -  Updated_at : <%=shop.updated_at%></br>
+<%end-%>
+-->
+<!--  Local  Data-->
+<h4>Database Approach.</h4><br>
+<div data-ng-init="getTiersFromDB()">
+Tiers :
+<select  ng-model="selected_tier_db" ng-options="data.tier for data in tierDataFromDB track by data.tier" ng-change="getSelectedTier()">
+  <option value=''>-- select --</option>
+</select>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+Programs :
+
+<select  ng-model="Programs" ng-options="pgrm.programs for pgrm in programs track by pgrm.id">
+  <option value=''>-- select --</option>
+</select>
+</div>
+<hr>
+
+
+<!-- Rest Call Data-->
+<br>
+<h4>Service Approach.</h4><br>
+Tiers :
+<select  ng-model="selected_tier" ng-options="data.tier_desc for data in restData track by data.tier_id" ng-change="getSelectedTierFromRXCApp()">
+  <option value=''>-- select --</option>
+</select>
+
+Programs :
+<select  ng-model="selected_program" ng-options="data.program_desc for data in programsDataFromRest track by data.program_id" ng-change="getSelectedProgramsFromRXCApp()">
+  <option value=''>-- select --</option>
+</select>
+
+Levels :
+<select  ng-model="selected_levels" ng-options="data.level_desc for data in levelsDataFromRest track by data.level_id">
+  <option value=''>-- select --</option>
+</select>
+<!--
+<a href='/rest/getdata'>Get MEAN App Data</a>
+<section>
+        <div class="container-fluid">
+            <div class="row">
+
+                <div>
+                    <div class="col-sm-3" width="20%">
+                        <div>
+                            <label class="control-label"> Tiers :</label>
+                            <select class='selectid' id="country" ng-model="country" ng-options="country.name for country in countries track by country._id" ng-change="GetSelectedCountry()">
+                                 <option value=''>-Select Country-</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" width="20%">
+                        <div>
+                            <label class="control-label">Programs :</label>
+                            <select class='selectid' id="state" ng-disabled="country.length === 0 && states.length === 0" ng-model="state" ng-options="state.name for state in states track by state.id" ng-change="GetSelectedState()">
+                                <option value=''>-Select State-</option>
+                            </select>
+                        </div>
+                    </div>
+                   <div class="col-sm-4" width="20%">
+                        <div>
+                            <label class="control-label">Test:</label>
+                            <select class='selectid' id="city" ng-disabled="states.length === 0 && cities.length === 0" ng-model="city" ng-options="city for city  in cities">
+                                <option value=''>-Select City-</option>
+            </select>
+                        </div>
+                    </div> 
+                    <div class="col-sm-2" width="20%">
+                        <button type="button" class="btn btn-primary button" ng-click="getDataFromRCXApp();">Retrieve</button>
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+</body>
+
+</html>

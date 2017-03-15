@@ -1,0 +1,90 @@
+.reportMainHeader {
+    background-color: #F08080;
+    border: solid 1px #000000;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: bold;
+    height: 19%;
+    padding: 20px 3px 3px 3px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.reportMainHeader1 {
+    background-color: #6495DD;
+    border: solid 1px #000000;
+    color: #FFFFFF;
+    font-size: 25px;
+    height: 19%;
+    font-weight: bold;
+    padding: 32px 3px 3px 3px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.reportMainHeader2 {
+    border: solid 1px #000000;
+    color: #FFFFFF;
+    font-size: 22px;
+    height: 19%;
+    font-weight: bold;
+    padding: 3px 3px 3px 3px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.selectid {
+    height: 32px;
+    width: 65%;
+    border-color: #6495DD;
+    border-radius: 2px;
+}
+
+.button {
+    width: 90%;
+}
+
+.commonTableBorder {
+    border: solid 1px #666666;
+}
+
+.tableHeading {
+    margin-top: 10px;
+}
+
+.indexTableHeaderCell {
+    background-color: #717D7D;
+    border-bottom: solid 1px #000000;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 3px 3px 3px 3px;
+    text-align: center;
+}
+
+.componentTableStepsHeader {
+    border: solid 1px #666699;
+    color: #003366;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    text-align: left;
+}
+
+.componentTableCell {
+    border: 1px solid #CBCBDC;
+    color: #000000;
+    font-size: 11px;
+    font-weight: normal;
+    padding: 5px 5px 5px 5px;
+    text-align: left;
+}
+
+.nodata {
+    background-color: gray;
+    text-align: center;
+}
+
+.nodataHeading {
+    color: white;
+}

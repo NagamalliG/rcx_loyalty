@@ -1,0 +1,8 @@
+require_relative '../config/boot'
+require 'rake'
+require 'certified'
+rake test:prepare
+rake db:migrate
+rake db:migrate RAILS_ENV=test
+Rake.application.run
+
