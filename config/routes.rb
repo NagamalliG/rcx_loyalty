@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   #Proxy Controller..
   get 'proxy/index' => 'proxy#index'
   get 'proxy/redeem' => 'proxy#redeem'
+  #Rest Controller
   get 'rest/getTierSvc'
   get 'rest/getPoints' => 'rest#getPoints', :defaults => { :format => 'json'},  :as => :get_points
   # root 'rest#getPoints'
