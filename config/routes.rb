@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root :to => 'home#index'
+  #Proxy Controller..
+  get 'proxy/index' => 'proxy#index'
+  get 'proxy/redeem' => 'proxy#redeem'
   get 'rest/getTierSvc'
-  get 'rest/getPoints'
-  root 'rest#getPoints'
+  get 'rest/getPoints' => 'rest#getPoints', :defaults => { :format => 'json'},  :as => :get_points
+  # root 'rest#getPoints'
   get 'rest/getProgramsSvc/' => 'rest#getProgramsSvc', :defaults => { :format => 'json'},  :as => :get_programs_svc
   get 'rest/getLevelsSvc/' => 'rest#getLevelsSvc', :defaults => { :format => 'json'},  :as => :get_levels_svc
   # get 'rest/getProgramsFromMeanApp'

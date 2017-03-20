@@ -14,7 +14,7 @@ class WebhooksController < ShopifyApp::WebhooksController
       @id =  params[:id]
       @first_name = params[:first_name]
       @last_name = params[:last_name]
-      @points = 100
+      @points = 50
       @shop_name = request.headers["HTTP_X_SHOPIFY_SHOP_DOMAIN"]
     #   puts @id 
     #   puts @first_name

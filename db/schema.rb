@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302092112) do
+ActiveRecord::Schema.define(version: 20170317070330) do
+
+  create_table "customerdetails", force: :cascade do |t|
+    t.text    "shop_name",  null: false
+    t.text    "first_name", null: false
+    t.text    "last_name",  null: false
+    t.integer "points",     null: false
+    t.index ["id"], name: "sqlite_autoindex_customerdetails_1", unique: true
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.text "tier",     null: false
+    t.text "programs", null: false
+  end
 
   create_table "shops", force: :cascade do |t|
     t.string   "shopify_domain", null: false
@@ -19,4 +32,9 @@ ActiveRecord::Schema.define(version: 20170302092112) do
     t.datetime "updated_at"
     t.index ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true
   end
+
+  create_table "tiers", primary_key: "tier", id: :text, force: :cascade do |t|
+    t.index ["tier"], name: "sqlite_autoindex_tiers_1", unique: true
+  end
+
 end

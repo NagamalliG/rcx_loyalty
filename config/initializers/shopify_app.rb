@@ -5,8 +5,8 @@ ShopifyApp.configure do |config|
   config.scope = "read_orders,read_products,read_customers"
   config.embedded_app = true
   config.webhooks = [
-    {topic: 'customers/create', address: 'https://f94b86dc.ngrok.io/webhooks/customers_create', format: 'json'},
-    {topic: 'products/create', address: 'https://f94b86dc.ngrok.io/webhooks/product_create', format: 'json'},
-    {topic: 'carts/update', address: 'https://f94b86dc.ngrok.io/webhooks/carts_update', format: 'json'}
+    {topic: 'customers/create', address: 'https://d51492c5.ngrok.io/webhooks/customers_create', format: 'json'},
+    {topic: 'products/create', address: 'https://d51492c5.ngrok.io/webhooks/product_create', format: 'json'},
+    {topic: 'carts/update', address: 'https://d51492c5.ngrok.io/webhooks/carts_update', format: 'json'}
   ]
 end

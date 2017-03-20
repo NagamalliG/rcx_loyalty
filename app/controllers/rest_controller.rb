@@ -25,10 +25,10 @@ class RestController < ShopifyApp::AuthenticatedController
  end
  def getPoints
      puts "getPoints called..."
-     puts request.body
-      @shop_name = request[:shop]
-      @points = Customerdetails.where(:shop_name => @shop_name)
-      #  @points = Customerdetails.all
-      # render json: @points
+     @customer_id=request.query_string
+     @id= @customer_id.split("=").last
+     @points = Customerdetails.where(:id => @id)
+     puts @points
+     render json: @customer_id
  end
 end
