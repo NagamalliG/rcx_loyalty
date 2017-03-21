@@ -7,7 +7,7 @@ class ProxyController < ApplicationController
             @points = Customerdetails.where(:id => @customer_id)
             render :layout => false, status:200, :content_type => 'application/liquid'
       else
-            render json: '403 Forbidden....', status: :forbidden , :content_type => 'application/liquid'
+            render json: 'Oops, something went wrong, please go back and try again - Thanks!', status: :forbidden , :content_type => 'application/liquid'
        end
   end
   def redeem
@@ -25,7 +25,7 @@ class ProxyController < ApplicationController
             end  
             render :layout => false, status:200, :content_type => 'application/liquid'
       else
-            render json: '403 Forbidden....', status: :forbidden , :content_type => 'application/liquid'
+            render json: 'Oops, something went wrong, please go back and try again - Thanks!', status: :forbidden , :content_type => 'application/liquid'
       end
   end
 end
