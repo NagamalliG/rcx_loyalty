@@ -5,7 +5,6 @@ class WebhooksController < ShopifyApp::WebhooksController
  end
   def productCreate
       @success = 'success'
-      
      puts request.headers["HTTP_X_SHOPIFY_SHOP_DOMAIN"]
     #   Customerdetails.connection.insert("INSERT INTO customers (id,first_name,last_name,points) VALUES (#{@id},'#{@first_name}','#{@last_name}',#{@points});")
       render status: 200 , json: @success.to_json
